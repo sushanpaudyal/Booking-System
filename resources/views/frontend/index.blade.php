@@ -1,4 +1,6 @@
+@extends('layouts.frontend')
 
+@section('content')
 <div class="container-fluid places">
 
     <p class="text-center red bolded">No offers were found that met the criteria</p>
@@ -30,3 +32,4 @@
     <?php endfor; ?>
 
 </div>
+@endsection

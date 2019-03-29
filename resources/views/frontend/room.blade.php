@@ -1,4 +1,6 @@
+@extends('layouts.frontend')
 
+@section('content')
 <div class="container places">
     <h1 class="text-center">Room in <a href="./?view=object">X</a> object</h1>
 
@@ -69,3 +71,4 @@
 </div>
 
 
+@endsection

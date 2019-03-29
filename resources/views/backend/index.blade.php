@@ -1,4 +1,6 @@
+@extends('layouts.backend')
 
+@section('content')
 <h2 class="sub-header">Booking calendar</h2>
 
 <?php for ($i = 1; $i <= 3; $i++): ?>
@@ -53,3 +55,5 @@
     <?php endfor; ?>
 
 <?php endfor; ?>
+
+    @endsection

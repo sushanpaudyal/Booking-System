@@ -40,7 +40,7 @@ THE SOFTWARE.-->
         <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
         
 
-        <link rel="stylesheet" href="css/app.css">
+        <link rel="stylesheet" href="{{asset('css/app.css')}}">
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -106,7 +106,7 @@ THE SOFTWARE.-->
 
                     </div>-->
 
-                    <?php include 'backend/' . $view . '.blade.php'; ?>
+                    @yield('content')
                 </div>
             </div>
         </div>
@@ -118,7 +118,7 @@ THE SOFTWARE.-->
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-        <script src="js/app.js"></script>
-        <script src="js/admin.js"></script>
+        <script src="{{asset('js/app.js')}}"></script>
+        <script src="{{asset('js/admin.js')}}"></script>
     </body>
 </html>

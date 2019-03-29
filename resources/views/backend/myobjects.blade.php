@@ -1,4 +1,6 @@
+@extends('layouts.backend')
 
+@section('content')
 <h2>List of objects</h2>
 <?php for ($i = 1; $i <= 3; $i++): ?>
 
@@ -18,3 +20,5 @@
 
 <?php endfor; ?>
 
+
+    @endsection

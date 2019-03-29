@@ -1,4 +1,6 @@
+@extends('layouts.backend')
 
+@section('content')
 <h2>User data</h2>
 <form method="POST" class="form-horizontal" enctype="multipart/form-data">
     <fieldset>
@@ -47,3 +49,5 @@
 
     </fieldset>
 </form>
+
+    @endsection

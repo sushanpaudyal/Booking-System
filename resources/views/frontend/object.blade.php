@@ -1,4 +1,6 @@
+@extends('layouts.frontend')
 
+@section('content')
 <div class="container-fluid places">
 
     <h1 class="text-center">LoremIpsum object  <small>City name</small></h1>
@@ -161,3 +163,5 @@
 
     <a href="#" class="btn btn-primary btn-xs top-buffer">Like this object</a>
 </div>
+
+    @endsection
