@@ -23,7 +23,7 @@ Route::get(trans('routes.person'),'FrontendController@person')->name('person'); 
 
 
 
-Route::group(['prefix'=>'admin'],function(){  /* Lecture 6 */
+Route::group(['prefix'=>'admin', 'middleware' => 'auth'],function(){  /* Lecture 6 */
 
     Route::get('/','BackendController@index')->name('adminHome'); /* Lecture 6 */
     Route::get(trans('routes.myobjects'),'BackendController@myobjects')->name('myObjects'); /* Lecture 6 */
@@ -34,3 +34,6 @@ Route::group(['prefix'=>'admin'],function(){  /* Lecture 6 */
 
 
 });
+Auth::routes();
+
+//Route::get('/home', 'HomeController@index')->name('home');

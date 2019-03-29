@@ -54,16 +54,32 @@ THE SOFTWARE.-->
                     <a class="navbar-brand" href="./">Home</a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
+                    @auth
                     <ul class="nav navbar-nav">
                         <li><p class="navbar-text">Logged in as:</p></li>
-                        <li><p class="navbar-text">Robert</p></li>
-                        <li><a href="admin.blade.php">admin</a></li>
-                        <li><a href="#contact">logout</a></li>
+                        <li><p class="navbar-text">{{ Auth::user()->name }}</p></li> <!-- Lecture 7 Auth -->
+                        <li><a href="{{ route('adminHome') }}">admin</a></li>
+
+                        <!-- Lecture 7 -->
+                        <li>
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                Logout
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                            </form>
+                        </li>
+
                     </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">Sign in</a></li>
-                        <li><a href="#">Sign up</a></li>
-                    </ul>
+                    @endauth
+                    @guest <!-- Lecture 7 -->
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="{{ route('login') }}">Sign in</a></li> <!-- Lecture 7 route -->
+                            <li><a href="{{ route('register') }}">Sign up</a></li> <!-- Lecture 7 route -->
+                        </ul>
+                    @endguest <!-- Lecture 7 -->
                 </div><!--/.nav-collapse -->
             </div>
         </nav>
