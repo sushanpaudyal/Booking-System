@@ -16,6 +16,7 @@ class CreateObjectsTable extends Migration
         Schema::create('objects', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name'); /* Lecture 8 */
+            $table->longText('description');
             $table->integer('user_id')->unsigned(); /* Lecture 8 */
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade'); /* Lecture 8 */
             $table->integer('city_id')->unsigned(); /* Lecture 8 */
