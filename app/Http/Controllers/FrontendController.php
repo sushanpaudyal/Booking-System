@@ -3,13 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Enjoythetrip\Repositories\FrontendRepository;
 
 class FrontendController extends Controller
 {
+    /* Lecture 12 */
+    public function __construct(FrontendRepository $frontendRepository)
+    {
+        $this->fR = $frontendRepository;
+    }
+
     /* Lecture 6 */
     public function index()
     {
-        return view('frontend.index');
+        $objects = $this->fR->getObjectsForMainPage();
+        return view('frontend.index',['objects'=>$objects]);
     }
 
     /* Lecture 6 */
