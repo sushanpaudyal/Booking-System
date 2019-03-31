@@ -1,14 +1,13 @@
 <?php
-
-namespace App\Enjoythetrip\Repositories; /* Lecture 12 */
-
+namespace App\Enjoythetrip\Repositories;
 use App\TouristObject;
-
-class FrontendRepository  {
-
+use App\Enjoythetrip\Interfaces\FrontendRepositoryInterface;
+class FrontendRepository implements FrontendRepositoryInterface  {
     public function getObjectsForMainPage()
     {
         return TouristObject::all();
     }
 
 }
+
+
